@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoladorDeDadosMAUI.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+
+            <!-- Título -->
+            <Label 
+            Text="ROLADOR DE DADOS"
+            FontSize="24"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+            <!-- Resultado -->
+            <Label 
+            x:Name="ResultadoLabel"
+            Text="6"
+            FontSize="64"
+            HorizontalOptions="Center" />
+
+            <!-- Picker de lados -->
+            <Picker 
+               x:Name="LadosPicker"
+               Title="Quantidade de lados"
+               HorizontalOptions="Fill">
+                
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>20</x:Int32>
+                        <x:Int32>100</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+                <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                <!-- Começa com 6 lados -->
+            </Picker>
+
+            <!-- Botão -->
+            <Button Text="ROLAR O DADO"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="OnRolarDadoClicked"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>
