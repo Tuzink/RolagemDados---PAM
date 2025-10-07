@@ -9,15 +9,17 @@ public partial class MainPage : ContentPage
 
     private void OnRolarDadoClicked(object sender, EventArgs e)
     {
-        if (LadosPicker.SelectedItem is int lados)
+        try
         {
-            Random random = new Random();
-            int resultado = random.Next(lados + 1);
+            int lados = (int)LadosPicker.SelectedItem;
+            Random rnd = new();
+            int resultado = rnd.Next(1, lados + 1);
             ResultadoLabel.Text = resultado.ToString();
         }
-        else
+
+        catch (Exception ex)
         {
-            ResultadoLabel.Text = "⚠️";
+            ResultadoLabel.Text = "error";
         }
     }
 }
