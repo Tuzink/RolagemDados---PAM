@@ -11,20 +11,25 @@ public partial class MainPage : ContentPage
 
     private void OnRolarDadoClicked(object sender, EventArgs e)
     {
-        //try
+        try
+        {
+            int lados = (int)LadosPicker.SelectedItem;
+            //  Random rnd = new();
+            //  int resultado = rnd.Next(1, lados + 1);
+            //  ResultadoLabel.Text = resultado.ToString();
 
-        //  int lados = (int)LadosPicker.SelectedItem;
-        //  Random rnd = new();
-        //  int resultado = rnd.Next(1, lados + 1);
-        //  ResultadoLabel.Text = resultado.ToString();
 
+            //catch (Exception ex)
+            // ResultadoLabel.Text = "error";
 
-        //catch (Exception ex)
-        // ResultadoLabel.Text = "error";
-
-        Dado dado = new Dado(2);
-        dado.rolar();
-        ResultadoLabel.Text = Convert.ToString(dado.LadoSorteado);
+            Dado dado = new Dado(lados);
+            dado.rolar();
+            ResultadoLabel.Text = Convert.ToString(dado.LadoSorteado);
+        }
+        catch (Exception ex)
+        {
+            ResultadoLabel.Text = "error";
+        }
     }
 
 
