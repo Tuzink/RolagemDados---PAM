@@ -23,6 +23,7 @@ public partial class MainPage : ContentPage
         // ResultadoLabel.Text = "error";
 
         Dado dado = new Dado(2);
+        dado.rolar();
         ResultadoLabel.Text = Convert.ToString(dado.LadoSorteado);
     }
 
