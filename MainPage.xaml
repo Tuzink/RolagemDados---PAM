@@ -11,7 +11,7 @@
             <Label 
             Text="ROLADOR DE DADOS"
             FontSize="30"
-            FontAttributes="Bold"
+            FontAttributes="Bold"        
             HorizontalOptions="Center" />
 
             <!-- Resultado -->

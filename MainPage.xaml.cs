@@ -1,4 +1,6 @@
-﻿namespace RoladorDeDadosMAUI;
+﻿using RoladorDeDadosMAUI.Models;
+
+namespace RoladorDeDadosMAUI;
 
 public partial class MainPage : ContentPage
 {
@@ -9,17 +11,20 @@ public partial class MainPage : ContentPage
 
     private void OnRolarDadoClicked(object sender, EventArgs e)
     {
-        try
-        {
-            int lados = (int)LadosPicker.SelectedItem;
-            Random rnd = new();
-            int resultado = rnd.Next(1, lados + 1);
-            ResultadoLabel.Text = resultado.ToString();
-        }
+        //try
 
-        catch (Exception ex)
-        {
-            ResultadoLabel.Text = "error";
-        }
+        //  int lados = (int)LadosPicker.SelectedItem;
+        //  Random rnd = new();
+        //  int resultado = rnd.Next(1, lados + 1);
+        //  ResultadoLabel.Text = resultado.ToString();
+
+
+        //catch (Exception ex)
+        // ResultadoLabel.Text = "error";
+
+        Dado dado = new Dado(2);
+        ResultadoLabel.Text = Convert.ToString(dado.LadoSorteado);
     }
+
+
 }
